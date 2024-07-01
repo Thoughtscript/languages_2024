@@ -70,6 +70,7 @@ Number of Thread.activeCount() threads 0
 Total Number of ManagementFactory.getThreadMXBean().getThreadCount() threads 9
 heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550240
 ====================================================================================================
+Completed: threadOfVirtual() > start()
 ```
 ```bash
 ====================================================================================================
