@@ -18,6 +18,8 @@ docker run <IMAGE_ID>
 
 Looking into Java 21+ lightweight Virtual Threads.
 
+> Baeldung (whom I used to write for and which is Top 3 most-trusted Java resource online!) suggests that JVT's can replace WebFlux in some scenarios.
+
 ### Configuration
 
 ```
@@ -38,7 +40,7 @@ Looking into Java 21+ lightweight Virtual Threads.
 
 Looks like:
 
-1. heapFreeSize in `newVirtualThreadPerTaskExecutor()` <= `threadOfVirtual()` even when `threadOfVirtual()` is executed first.
+1. heapFreeSize in `newVirtualThreadPerTaskExecutor()` <= `threadOfVirtual()` even when `threadOfVirtual()` is executed first and in the same `static` context.
 2. Interestingly enough `Thread.activeCount()` will not report `Virtual Threads` (even `newVirtualThreadPerTaskExecutor()`)!
 3. Unlike other `ServiceExecutors`, `newVirtualThreadPerTaskExecutor()` is [unbounded](https://docs.oracle.com/en%2Fjava%2Fjavase%2F22%2Fdocs%2Fapi%2F%2F/java.base/java/util/concurrent/Executors.html#newVirtualThreadPerTaskExecutor()) in terms of how many can be launched.
 
@@ -54,21 +56,21 @@ Completed: threadOfVirtual() > start()
 newVirtualThreadPerTaskExecutor() > submit()
 Number of Thread.activeCount() threads 0
 Total Number of ManagementFactory.getThreadMXBean().getThreadCount() threads 9
-heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550240
+heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550216
 ====================================================================================================
 Completed: newVirtualThreadPerTaskExecutor() > submit()
 ====================================================================================================
 newVirtualThreadPerTaskExecutor() > submit()
 Number of Thread.activeCount() threads 0
 Total Number of ManagementFactory.getThreadMXBean().getThreadCount() threads 9
-heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550240
+heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550216
 ====================================================================================================
 Completed: newVirtualThreadPerTaskExecutor() > submit()
 ====================================================================================================
 threadOfVirtual() > start()
 Number of Thread.activeCount() threads 0
 Total Number of ManagementFactory.getThreadMXBean().getThreadCount() threads 9
-heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550240
+heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550216
 ====================================================================================================
 Completed: threadOfVirtual() > start()
 ```
@@ -84,21 +86,21 @@ Completed: threadOfVirtual() > start()
 newVirtualThreadPerTaskExecutor() > submit()
 Number of Thread.activeCount() threads 0
 Total Number of ManagementFactory.getThreadMXBean().getThreadCount() threads 9
-heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550240
+heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550216
 ====================================================================================================
 Completed: newVirtualThreadPerTaskExecutor() > submit()
 ====================================================================================================
 newVirtualThreadPerTaskExecutor() > submit()
 Number of Thread.activeCount() threads 0
 Total Number of ManagementFactory.getThreadMXBean().getThreadCount() threads 9
-heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550240
+heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550216
 ====================================================================================================
 Completed: newVirtualThreadPerTaskExecutor() > submit()
 ====================================================================================================
 threadOfVirtual() > start()
 Number of Thread.activeCount() threads 0
 Total Number of ManagementFactory.getThreadMXBean().getThreadCount() threads 9
-heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550240
+heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550216
 ====================================================================================================
 Completed: threadOfVirtual() > start()
 ```

@@ -10,6 +10,7 @@ import java.lang.management.ManagementFactory;
 import java.util.concurrent.*;
 
 public class VirtualThreadTest {
+    private static Executor executor = Executors.newVirtualThreadPerTaskExecutor();
 
     private static void printResourceInfo(String id) {
         System.out.println("====================================================================================================");
@@ -44,8 +45,6 @@ public class VirtualThreadTest {
     @SneakyThrows // throws ExecutionException, InterruptedException
     public static void testNewVirtualThreadPerTaskExecutor() {
         // Returns a Future
-        Executor executor = Executors.newVirtualThreadPerTaskExecutor();
-
         Future<String> f = ((ExecutorService) executor).submit(()-> {
             String result = "newVirtualThreadPerTaskExecutor() > submit()";
             printResourceInfo(result);
