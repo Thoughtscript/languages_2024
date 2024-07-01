@@ -28,3 +28,8 @@ services:
     build:
       context: ./go
       dockerfile: dockerfile 
+
+  java:
+    build:
+      context: ./java
+      dockerfile: dockerfile 
