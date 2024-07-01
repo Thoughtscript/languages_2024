@@ -1,5 +1,8 @@
 # languages_2024
 
+[![](https://img.shields.io/badge/typescript-5.5.2-blue.svg)](https://www.typescriptlang.org/)
+[![](https://img.shields.io/badge/Java-1.22-blue.svg)](https://www.oracle.com/java/technologies/downloads/#java22)
+
 ## Sparse Checkout
 
 The **Bash** script will download some other repos. 

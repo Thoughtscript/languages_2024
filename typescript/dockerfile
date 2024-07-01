@@ -6,3 +6,6 @@ WORKDIR /app
 COPY . .
 
 RUN npm i
+RUN npm run tsc && npm run build
+
+CMD ["npm", "run", "test"]
