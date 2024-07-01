@@ -32,7 +32,7 @@ Looking into Java 21+ lightweight Virtual Threads.
 
 1. https://blog.rockthejvm.com/ultimate-guide-to-java-virtual-threads/ <- This is incorrect 
 
-   "Also, they were designed with the idea of using a different virtual thread for each request. So, it’s worthless to use a thread pool or an executor service to create virtual threads."
+   "Also, they were designed with the idea of using a different virtual thread for each request. So, it’s *worthless* to use a thread pool or an executor service to create virtual threads."
 
 2. From the official documentation: 
    * https://docs.oracle.com/en%2Fjava%2Fjavase%2F22%2Fdocs%2Fapi%2F%2F/java.base/java/util/concurrent/Executors.html#newVirtualThreadPerTaskExecutor() 
@@ -40,9 +40,10 @@ Looking into Java 21+ lightweight Virtual Threads.
 
 Looks like:
 
-1. heapFreeSize in `newVirtualThreadPerTaskExecutor()` <= `threadOfVirtual()` even when `threadOfVirtual()` is executed first and in the same `static` context.
+1. `heapFreeSize` in `newVirtualThreadPerTaskExecutor()` <= `threadOfVirtual()` even when `threadOfVirtual()` is executed first and in the same `static` context.
 2. Interestingly enough `Thread.activeCount()` will not report `Virtual Threads` (even `newVirtualThreadPerTaskExecutor()`)!
 3. Unlike other `ServiceExecutors`, `newVirtualThreadPerTaskExecutor()` is [unbounded](https://docs.oracle.com/en%2Fjava%2Fjavase%2F22%2Fdocs%2Fapi%2F%2F/java.base/java/util/concurrent/Executors.html#newVirtualThreadPerTaskExecutor()) in terms of how many can be launched.
+4. So, after initialization, the two seem evenly matched. `newVirtualThreadPerTaskExecutor()` supports `Futures` and their composition whereas `threadOfVirtual()` uses a blocking `join()`. So, they have their trade-offs but, it's not so clear-cut that `newVirtualThreadPerTaskExecutor()` (and `new` keyworded `Concurrent` entities should universally be ignored in favor of `threadOfVirtual()`).
 
 ```bash
 ====================================================================================================
@@ -62,6 +63,17 @@ Completed: newVirtualThreadPerTaskExecutor() > submit()
 ====================================================================================================
 newVirtualThreadPerTaskExecutor() > submit()
 Number of Thread.activeCount() threads 0
+Total Number of ManagementFactory.getThreadMXBean().getThreadCount() threads 9
+heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550216
+====================================================================================================
+Completed: newVirtualThreadPerTaskExecutor() > submit()
+====================================================================================================
+threadOfVirtual() > start()
+Number of Thread.activeCount() threads 0
+Total Number of ManagementFactory.getThreadMXBean().getThreadCount() threads 9
+heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550216
+====================================================================================================
+Completed: threadOfVirtual() > start()
 Total Number of ManagementFactory.getThreadMXBean().getThreadCount() threads 9
 heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550216
 ====================================================================================================
@@ -80,6 +92,34 @@ threadOfVirtual() > start()
 Number of Thread.activeCount() threads 0
 Total Number of ManagementFactory.getThreadMXBean().getThreadCount() threads 9
 heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 260053584
+====================================================================================================
+Completed: threadOfVirtual() > start()
+====================================================================================================
+newVirtualThreadPerTaskExecutor() > submit()
+Number of Thread.activeCount() threads 0
+Total Number of ManagementFactory.getThreadMXBean().getThreadCount() threads 9
+heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550216
+====================================================================================================
+Completed: newVirtualThreadPerTaskExecutor() > submit()
+====================================================================================================
+newVirtualThreadPerTaskExecutor() > submit()
+Number of Thread.activeCount() threads 0
+Total Number of ManagementFactory.getThreadMXBean().getThreadCount() threads 9
+heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550216
+====================================================================================================
+Completed: newVirtualThreadPerTaskExecutor() > submit()
+====================================================================================================
+threadOfVirtual() > start()
+Number of Thread.activeCount() threads 0
+Total Number of ManagementFactory.getThreadMXBean().getThreadCount() threads 9
+heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550216
+====================================================================================================
+Completed: threadOfVirtual() > start()
+====================================================================================================
+threadOfVirtual() > start()
+Number of Thread.activeCount() threads 0
+Total Number of ManagementFactory.getThreadMXBean().getThreadCount() threads 9
+heapSize: 264241152 heapMaxSize: 4185915392 heapFreeSize: 259550216
 ====================================================================================================
 Completed: threadOfVirtual() > start()
 ====================================================================================================

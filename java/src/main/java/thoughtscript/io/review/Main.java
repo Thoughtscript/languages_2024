@@ -14,5 +14,11 @@ public class Main {
 
         VirtualThreadTest.testNewVirtualThreadPerTaskExecutor();
         VirtualThreadTest.testThreadOfVirtual();
+
+        VirtualThreadTest.testThreadOfVirtual();
+        VirtualThreadTest.testNewVirtualThreadPerTaskExecutor();
+
+        VirtualThreadTest.testNewVirtualThreadPerTaskExecutor();
+        VirtualThreadTest.testThreadOfVirtual();
     }
 }
