@@ -1,0 +1,30 @@
+services:
+  kotlin:
+    build:
+      context: ./kotlin_2024/kotlin
+      dockerfile: dockerfile
+
+  ruby:
+    build:
+      context: ./rrr_2024/ruby
+      dockerfile: dockerfile
+
+  python:
+    build:
+      context: ./python_processing_2024/python
+      dockerfile: dockerfile
+
+  node:
+    build:
+      context: ./node
+      dockerfile: dockerfile
+
+  typescript:
+    build:
+      context: ./typescript
+      dockerfile: dockerfile
+
+  go:
+    build:
+      context: ./go
+      dockerfile: dockerfile 
