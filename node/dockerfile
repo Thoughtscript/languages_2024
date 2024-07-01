@@ -6,3 +6,4 @@ WORKDIR /app
 COPY . .
 
 RUN npm i
+RUN cd async_error_node_2024 && npm i
