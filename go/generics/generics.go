@@ -16,13 +16,11 @@ type TypeC TypeB
 
 // with Type parameters
 func exampleOne[T TypeA](s T, t T) {
-	fmt.Println(s)
-	fmt.Println(t)
+	fmt.Println("generics > exampleOne", s, t)
 }
 
 func exampleTwo[T string](s T, t T) {
-	fmt.Println(s)
-	fmt.Println(t)
+	fmt.Println("generics > exampleTwo", s, t)
 }
 
 func anyParamTypeOne[T any](x T) T {
@@ -49,8 +47,8 @@ func GenericsTest() {
 	exampleTwo("I'm first", "I'm last")
 
 	x := anyParamTypeOne("I'm x")
-	fmt.Println(x)
+	fmt.Println("generics >", x)
 
 	y := anyParamTypeTwo("I'm y")
-	fmt.Println(y)
+	fmt.Println("generics >", y)
 }

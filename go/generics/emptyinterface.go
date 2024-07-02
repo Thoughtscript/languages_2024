@@ -9,7 +9,7 @@ type A struct{}
 type B string
 
 func golangGeneric(val interface{}) {
-	fmt.Println(val)
+	fmt.Println("empty interface >", val)
 }
 
 // Accepts either type

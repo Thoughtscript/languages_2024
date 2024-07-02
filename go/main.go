@@ -5,6 +5,7 @@ import (
 	i "review/interfaces"
 	o "review/ood"
 	p "review/pointers"
+	r "review/reflection"
 )
 
 func main() {
@@ -19,4 +20,5 @@ func main() {
 	p.PointersTestOne()
 	p.PointersTestTwo()
 
+	r.ReflectionTest()
 }

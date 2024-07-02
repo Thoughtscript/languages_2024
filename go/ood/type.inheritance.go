@@ -11,6 +11,6 @@ type B CustomString
 func TypeInheritanceTest() {
 	var AA CustomString = "AA"
 	var BB B = "BB"
-	fmt.Println(AA)
-	fmt.Println(BB)
+	fmt.Println("type inheritance >", AA)
+	fmt.Println("type inheritance >", BB)
 }

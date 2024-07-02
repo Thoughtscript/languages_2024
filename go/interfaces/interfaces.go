@@ -59,20 +59,20 @@ func (p Point) AddCoordinates() float32 {
 func InterfaceTest() {
 	// type in declaration can be the Interface
 	var s Shape = Point{1, 2, 3}
-	fmt.Println(s)
+	fmt.Println("interfaces >", s)
 
 	a := Point{1, 2, 3}
-	fmt.Println(a.AddCoordinates())
-	fmt.Println(a)
+	fmt.Println("interfaces >", a.AddCoordinates())
+	fmt.Println("interfaces >", a)
 
 	b := NewPoint(3, 4, 5)
-	fmt.Println(b)
-	fmt.Println(&b)
-	fmt.Println(*b)
+	fmt.Println("interfaces >", b)
+	fmt.Println("interfaces >", &b)
+	fmt.Println("interfaces >", *b)
 
 	c := AddCoordinates(a)
-	fmt.Println(c)
+	fmt.Println("interfaces >", c)
 
 	d := a.AdditionReceiver()
-	fmt.Println(d)
+	fmt.Println("interfaces >", d)
 }

@@ -25,7 +25,7 @@ func StructInheritanceTest() {
 		},
 	}
 
-	fmt.Println(dog)
+	fmt.Println("struct inheritance >", dog)
 
 	lizard := Reptile{
 		animalParts: Animal{
@@ -33,5 +33,5 @@ func StructInheritanceTest() {
 		},
 	}
 
-	fmt.Println(lizard)
+	fmt.Println("struct inheritance >", lizard)
 }
