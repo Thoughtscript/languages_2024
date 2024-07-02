@@ -7,7 +7,6 @@ COPY . .
 
 RUN go clean
 RUN go clean -modcache
-# RUN go mod download
-# RUN go get goserver/database
+RUN go mod download
 
-# CMD ["go", "run", "httpsServer.go"]
+CMD ["go", "run", "main.go"]

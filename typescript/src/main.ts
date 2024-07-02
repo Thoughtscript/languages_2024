@@ -1,5 +1,5 @@
-import { B } from './subclass'
-import { C, D, E, F } from './destructingkeys'
+import { B } from './classes/subclass'
+import { C, D, E, F } from './keydestructuring/destructingkeys'
 
 try {
 

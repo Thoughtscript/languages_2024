@@ -7,3 +7,6 @@ COPY . .
 
 RUN npm i
 RUN cd async_error_node_2024 && npm i
+
+# Will print to Docker w/ rebinding or redirecting STDOUT this way.
+CMD [ "bash", "run.sh" ]
