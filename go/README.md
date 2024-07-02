@@ -9,7 +9,7 @@ interfaces > {1 2 3}
 interfaces > 6
 interfaces > {1 2 3}
 interfaces > &{3 4 5}
-interfaces > 0xc000102000
+interfaces > 0xc0000a6020
 interfaces > {3 4 5}
 interfaces > 6
 interfaces > 6
@@ -27,13 +27,13 @@ pointers > 42
 pointers > 21
 pointers > 73
 pointers > 73
-pointers > 0xc000102008
+pointers > 0xc0000a6028
 pointers > <variable> 'num' has <value>: 100
-pointers > 'numAddress' obtains <pointer> via & <address operator> and <pointer type>: *int = &num  0xc000100060
+pointers > 'numAddress' obtains <pointer> via & <address operator> and <pointer type>: *int = &num  0xc0000a4090
 pointers > <derefences> back to the <value> with <dereferencing operator> on 'numAddress': derefNum = *numAddress 100
-pointers > call & <address operator> on 'derefNum' to obtain <address>: &derefNum 0xc000100068
+pointers > call & <address operator> on 'derefNum' to obtain <address>: &derefNum 0xc0000a4098
 pointers > can <dereference> back directly with & and * operators sequentially: *&derefNum 100
-pointers > set <value> on <dereference> of 'numAddress', then get <address> from <pointer type>: *numAddress = 42 0xc000100060
+pointers > set <value> on <dereference> of 'numAddress', then get <address> from <pointer type>: *numAddress = 42 0xc0000a4090
 pointers > <dereference> back to <value>: *numAddress  42
 reflection > reflection.AA reflection.BB reflection.CC
 reflection > reflection.S
@@ -48,6 +48,7 @@ reflection > exampleFive {a} {}
 reflection > exampleSix {a} {}
 reflection > exampleSeven {a} {b}
 reflection > exampleSeven {a} {c}
+reflection > exampleNine {a} {a}
 reflection > exampleEight {a} {c}
 Recovered from panic! reflection > t doesn't implement W
 ```

@@ -82,6 +82,11 @@ func exampleEight(s AA, t any) {
 	}
 }
 
+// Note that the above is not the same as the following:
+func exampleNine[TT W](s TT, t TT) {
+	fmt.Println("reflection > exampleNine", s, t)
+}
+
 func ReflectionTest() {
 	var a = AA{
 		msg: "a",
@@ -134,6 +139,12 @@ func ReflectionTest() {
 	// exampleSeven(a, d)
 	exampleSeven(a, b)
 	exampleSeven(a, c)
+
+	// These aren't valid
+	// exampleNine(a, c)
+	// exampleNine(a, d)
+
+	exampleNine(a, a) // this is though suggesting it only goes 1 implementation deep
 
 	// These will now correctly Type check by implementing through W
 	exampleEight(a, c)
