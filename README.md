@@ -5,6 +5,7 @@
 [![](https://img.shields.io/badge/go-1.22.4-lightblue.svg)](https://go.dev/doc/)
 [![](https://img.shields.io/badge/Kotlin-1.9.22-purple.svg)](https://kotlinlang.org/) 
 [![](https://img.shields.io/badge/Python-3.12.3-yellow.svg)](https://www.python.org/downloads/)
+[![](https://img.shields.io/badge/Node-22-green.svg)](https://nodejs.org/en)
 
 ## Sparse Checkout
 
