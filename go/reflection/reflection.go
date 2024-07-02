@@ -16,7 +16,7 @@ type W interface {
 
 var stype = reflect.TypeOf((*S)(nil)).Elem() // Otain the type of S
 
-var wtype = reflect.TypeOf((*W)(nil)).Elem() // Otain the type of S
+var wtype = reflect.TypeOf((*W)(nil)).Elem() // Otain the type of W
 
 type AA struct {
 	msg string
