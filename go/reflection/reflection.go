@@ -157,4 +157,5 @@ func ReflectionTest() {
 		}
 	}()
 	exampleEight(a, d)
+	// Careful with what goes underneath - should use the above in wrapping func or go routine!
 }
