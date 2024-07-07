@@ -7,6 +7,12 @@
 [![](https://img.shields.io/badge/Python-3.12.3-yellow.svg)](https://www.python.org/downloads/)
 [![](https://img.shields.io/badge/Node-22-green.svg)](https://nodejs.org/en)
 
+## Use
+
+```bash
+bash run.sh
+```
+
 ## Sparse Checkout
 
 The **Bash** script will download some other repos. 
