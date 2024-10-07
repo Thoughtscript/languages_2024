@@ -20,5 +20,9 @@ public class Main {
 
         VirtualThreadTest.testNewVirtualThreadPerTaskExecutor();
         VirtualThreadTest.testThreadOfVirtual();
+
+        StaticFieldTest staticFieldTest = new StaticFieldTest();
+        staticFieldTest.forceExposeStaticFieldThroughGetter();
+        System.out.println(StaticFieldTest.testfield);
     }
 }
