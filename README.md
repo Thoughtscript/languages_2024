@@ -6,6 +6,8 @@
 [![](https://img.shields.io/badge/Kotlin-1.9.22-purple.svg)](https://kotlinlang.org/) 
 [![](https://img.shields.io/badge/Python-3.12.3-yellow.svg)](https://www.python.org/downloads/)
 [![](https://img.shields.io/badge/Node-22-green.svg)](https://nodejs.org/en)
+[![](https://img.shields.io/badge/php-8.3-royalblue.svg)](https://www.php.net/releases/8.3/en.php)
+[![](https://img.shields.io/badge/Ruby-3.3.3-red.svg)](https://www.ruby-lang.org/en/)
 
 ## Use
 
