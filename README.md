@@ -9,6 +9,8 @@
 [![](https://img.shields.io/badge/php-8.3-royalblue.svg)](https://www.php.net/releases/8.3/en.php)
 [![](https://img.shields.io/badge/Ruby-3.3.3-red.svg)](https://www.ruby-lang.org/en/)
 
+> Several dependencies are Private repositories.
+
 ## Use
 
 ```bash

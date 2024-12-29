@@ -14,6 +14,8 @@ git clone https://github.com/Thoughtscript/php_2024.git &
 cd java && git clone https://github.com/Thoughtscript/java_algos.git &
 cd node && git clone https://github.com/Thoughtscript/async_error_node_2024.git &
 
+# If using Docker Compose Engine V2 uncomment:
+# sleep 30 && docker compose up
 sleep 30 && docker-compose up
 
 wait
