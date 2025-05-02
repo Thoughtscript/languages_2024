@@ -1,6 +1,6 @@
 # languages_2024
 
-[![](https://img.shields.io/badge/typescript-5.5.2-royalblue.svg)](https://www.typescriptlang.org/)
+[![](https://img.shields.io/badge/typescript-5.8.3-royalblue.svg)](https://www.typescriptlang.org/)
 [![](https://img.shields.io/badge/Java-1.22-blue.svg)](https://www.oracle.com/java/technologies/downloads/#java22)
 [![](https://img.shields.io/badge/go-1.22.4-lightblue.svg)](https://go.dev/doc/)
 [![](https://img.shields.io/badge/Kotlin-1.9.22-purple.svg)](https://kotlinlang.org/) 

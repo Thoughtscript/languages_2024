@@ -6,14 +6,14 @@ export interface Example {
 }
 
 // variable types are specified via:
-const E: Example = {
+export const E: Example = {
     fieldA: "example",
     fieldB: 1,
     fieldC: true
 }
 
 // interfaces can be combined with class and constructor syntax
-export class Example implements E {
+export class Example implements Example {
     fieldA = ""
     fieldB = 0
     fieldC = false
@@ -24,9 +24,3 @@ export class Example implements E {
       this.fieldC = fieldC
     }
 }
-
-const EE = new Example('a', 3, true)
-
-console.log(E)
-
-console.log(EE)

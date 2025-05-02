@@ -16,23 +16,17 @@ interface D {
 }
 
 // Can pick specific fields (think subtype)
-type E = Pick<D, "fieldA">;
+export type E = Pick<D, "fieldA">;
 
-const A: A = {
+export const A: A = {
     id: 1
 }
 
-const C: C = {
+export const C: C = {
     id: 1,
     name: "pronomen"
 }
 
-const E: E = {
+export const E: E = {
     fieldA: 'message'
 }
-
-console.log(A)
-
-console.log(C)
-
-console.log(E)
